@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Mi portafolio con Bootstrap</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+        <link href="style.css" rel="stylesheet" />
+        <meta name="theme-color" content="#8CB402">
+    </head>
+    <body>
+        <header>
+            <div class="collapse" id="navbarHeader">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-md-7 py-4">
+                            <h4>Hola! Soy Pía ✶</h4>
+                            <p class="text-body-secondary">
+                                Tengo 21 años y soy estudiante de cuarto año de Diseño Integral en la Pontificia Universidad Católica de Chile. Mis proyectos rondan en base a la visualización de información, comunicación visual y cómo volverlos tangibles. Veo el diseño como una manera de crear un mundo más amigable, empático y entendible para todos los seres, a través de lo visual y físico.
+                            </p>
+
+                            <div>
+                                <br>
+                            <h4>Contáctame!</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.instagram.com/rkivens/" target="_blank" class="text-black">Instagram</a></li>
+                                <li><a href="https://www.linkedin.com/in/pía-canales-riquelme-1a74032b1/" target="_blank" class="text-black">LinkedIn</a></li>
+                                <li><a href="mailto:piacanalesr@uc.cl" class="text-black">Correo</a></li>
+                            </ul>
+                        </div>
+
+
+                        </div>
+                        <div class="col-sm-4 offset-md-1 py-4">
+                            <h4 class="ms-2">Habilidades</h4>
+                            <table id="aqui" class="table table-hover"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-dark bg-dark shadow-sm">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="py-5 text-center container">
+                <div class="row py-lg-5">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <h1 class="fw-light">☆ Pía Canales Riquelme ☆</h1>
+                        <p class="lead text-body-secondary">
+                            Sobre mí
+                        </p>
+                        <p>
+              <a href="about.html" class="btn btn-secondary my-2">Portafolio</a>
+              <a href="index.html" class="btn my-2" style="background-color: #8CB402; border: none; color: white;">Sobre mí</a>
+          </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="album py-5 bg-body-tertiary">
+                <section id="grafico">
+                <div style="max-width: 800px; margin: 50px auto; text-align: center; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h2 style="margin-bottom: 30px; color: #333;">Mis promedios en Taller de Diseño UC</h2>
+                    <div style="width: 100%; height: 400px;">
+                        <canvas id="myLineChart"></canvas>
+                    </div>
+                </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+                <script>
+                    const ctx = document.getElementById("myLineChart").getContext("2d");
+
+                    const data = {
+                        labels: ["Taller 1", "Taller 2", "Taller 3", "Taller 4", "Taller 5", "Taller 6"],
+                        datasets: [
+                            {
+                                label: "Talleres de Diseño",
+                                data: [5.5, 5.8, 5.9, 6.3, 6.2, 6.7],
+                                borderColor: "rgb(140, 180, 2)",
+                                backgroundColor: "rgba(140, 180, 2, 0.2)",
+                                tension: 0.1,
+                            },
+                        ],
+                    };
+
+                    const config = {
+                        type: "line",
+                        data: data,
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            plugins: {
+                                legend: {
+                                    position: "top",
+                                },
+                            },
+                        },
+                    };
+
+                    const myLineChart = new Chart(ctx, config);
+                </script>
+            </section>
+            </div>
+        </main>
+
+        <footer class="text-body-secondary py-5">
+            <div class="container">
+                <p class="float-end mb-1"><a href="#">Vuelve al comienzo</a></p>
+                <p class="mb-1"> &copy;   Desarollado por Catalina Bustos, 2025 </p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+        <script src="script.js"></script>
+
+        <script>
+            const habilidades = [
+                { programa: "Photoshop", valor: "60" },
+                { programa: "Illustrator", valor: "80" },
+                { programa: "InDesign", valor: "40" },
+                { programa: "Fusion360", valor: "30" },
+                { programa: "FIGMA", valor: "90" },
+            ];
+
+            const donde = document.querySelector("#aqui");
+
+            habilidades.forEach((h) => {
+                donde.innerHTML += `<tr>
+                    <td class="w-25">${h.programa}</td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 5">
+                        <rect width="${h.valor}" height="5" rx="2" ry="2" fill="#8CB402" text-color="black" />      
+                        </svg>
+                        </td>
+                    </tr>`;
+            });
+        </script>
+    </body>
+</html> 
